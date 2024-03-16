@@ -6,6 +6,8 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import web.tcs.model.TipoCambio;
 
+import java.util.Optional;
+
 @Repository
 public interface TipoCambioRepository extends JpaRepository<TipoCambio, Long> {
 

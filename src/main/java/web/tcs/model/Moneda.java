@@ -1,9 +1,17 @@
 package web.tcs.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "moneda")
+@Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class Moneda {
 
     @Id
@@ -13,30 +21,6 @@ public class Moneda {
     private String nombre;
     @Column
     private String abreviatura;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getAbreviatura() {
-        return abreviatura;
-    }
-
-    public void setAbreviatura(String abreviatura) {
-        this.abreviatura = abreviatura;
-    }
 
     @Override
     public String toString() {
