@@ -32,11 +32,14 @@ public class WebSecurityConfig {
         jwtAuthenticationFilter.setAuthenticationManager(authManager);
         jwtAuthenticationFilter.setFilterProcessesUrl("/login");
 
-        return http
+        return http.authorizeHttpRequests().requestMatchers("/h2-ui/**").permitAll()
+                .and()
                 .csrf().disable()
                 .authorizeHttpRequests()
                 .anyRequest()
                 .authenticated()
+                .and()
+                .headers().frameOptions().disable()
                 .and()
                 .httpBasic()
                 .and()
